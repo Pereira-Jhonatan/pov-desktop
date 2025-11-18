@@ -13,7 +13,31 @@ light_source {<0, 300, -20> color rgb <1, 1, 1>}
 /*camera {
     location <-60, 90, -80>
     look_at <20, 25, -20>}*/
-
+#declare CAMSpline =
+    spline {
+//    linear_spline
+//    quadratic_spline
+                                     cubic_spline
+                                     
+                                     -2, <0, .3, -3>,
+                                     -1, <0, .3, -2>,
+                                     0, <0, .3,-1>
+                                     1, <0, .3, 1>
+                                     2, <-2,0, 2>
+                                     3, <0,0, 3>
+                                     4, <2,0, 4>
+                                     5, <0,0, 5>
+                                     6, <-2,0, 6>
+                                     7, <0,0, 7>
+                                     8, <2,0, 8>
+                                     9, <0,0, 9>
+                                     10, <-2,0, 10>
+                                     11, <0,0, 11>
+                                     12, <2,0, 12>
+                                     13, <0,0, 13>
+                                     14, <-2,0, 14>
+                                     15, <0,0, 15>
+                                                    }
 camera {
     location <40, 50, -130>
     look_at <4, 30, 0>} 
@@ -61,9 +85,9 @@ union{
             finish { phong .2 reflection{0.001}}}
             } //paredes do corredor
     
-    /////////////////////////////////////////Teto/////////////////////////////////////////////////////////
+/////////////////////////////////////////Teto/////////////////////////////////////////////////////////
     box {<-63, 117, 4>, <103, 116.9, -153> pigment {color rgb <.25,  .25, .25>}}
-    /////////////////////////////////////////Chão/////////////////////////////////////////////////////////
+/////////////////////////////////////////Chão/////////////////////////////////////////////////////////
     box {<-63, -1, 4>, <103, -0.2, -353> texture{ pigment {color rgb <.02, .01, 0>}   
         normal { wood 0.9 scale 0.35 turbulence 0.1 rotate<0,0,0> } 
         rotate<0,0,0> scale 3.5 translate<0,0,0>}}
@@ -100,7 +124,7 @@ union{
         #declare tileX = tileX - 9.3;
         #declare tileCountX = tileCountX + 1;
         #end  //dois whiles para intercalar as colunas de laminados e não ficar um do lado do outro
-    //////////////////////////////////////////Janela//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////Janela//////////////////////////////////////////////////////////////////////////
     //Moldura da janela
     difference {
         box {<14.5, 24.5, 4.5>, <75.5, 80.5, 0> pigment {color rgb <.45,  .45, .45>}}
@@ -643,17 +667,16 @@ union {
        //Pé do Monitor
        difference {
             sphere {<0, -9, -10> 8 pigment {color rgb <1, 1, .8> }
-                       normal{bozo 1 scale .008}
-                       scale <1, 0.2, 1>}
-                  box {<-10, -1.6, 10>, <10, -10, -20> pigment {color rgb <1, 1, .8>} 
-                       normal{bozo 1 scale .008}}
-                  }//FIm do Difference
+                normal{bozo 1 scale .008}
+                scale <1, 0.2, 1>}
+            box {<-10, -1.6, 10>, <10, -10, -20> pigment {color rgb <1, 1, .8>} 
+                normal{bozo 1 scale .008}}}//FIm do Difference
+       
        cone {<0, 2, -10> 1, <0, -1, -10> 3 pigment {color rgb <1, 1, .8>} 
             normal{bozo 1 scale .008}}            
        
        //translate pra mover tudo pra cima
-       translate <-35, 39, -12>             
-       }//Fim do union (Monitor)
+       translate <-35, 39, -12>}//Fim do union (Monitor)
        /////////////////////////////////////////////FIM DO MONITOR/////////////////////////////////////////////////////////////////
        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
        /*------------------------------------------------------------------------------------------------------------------------*/
@@ -661,168 +684,156 @@ union {
        ////////////////////////////////////////////////GABINETE////////////////////////////////////////////////////////////////////
        
        union{ //union gabinete
-               difference{ //Corpo do Gabinete
-                           intersection {box {<-3.5, 0, 0>, <3.5, 25, -40> pigment {color rgb <.8, .8, .6>}
-                                                finish{
-                                                      conserve_energy
-                                                      diffuse 0.6
-                                                      ambient 0
-                                                      specular 0.2
-                                                      roughness 0.09}
-                                                      normal{bozo 1 scale .008}
-                                                      }
-                                         cylinder {<0, -2, -12>, <0, 30, -12> 16 pigment {color rgb <.8, .8, .6>}
-                                                finish{
-                                                      conserve_energy
-                                                      diffuse 0.6
-                                                      ambient 0
-                                                      specular 0.2
-                                                      roughness 0.09}
-                                                      normal{bozo 1 scale .008}
-                                                      }
-                                        }//fim do intersection
-                           // particionamenndo do leitor de dvd
-                           box {<-3, 23, -27>, <3, 20, -29> pigment {color rgb <.9, .9, .8>}
-                               finish{
-                                      conserve_energy
-                                      diffuse 0.6
-                                      ambient 0
-                                      specular 0.2
-                                      roughness 0.09}
-                                      normal{bozo 1 scale .008}
-                                      } 
-                           // particionamento do leitor de disquete
-                           box {<-3, 16, -27>, <3, 19, -29> pigment {color rgb <.9, .9, .8>}
-                               finish{
-                                      conserve_energy
-                                      diffuse 0.6
-                                      ambient 0
-                                      specular 0.2
-                                      roughness 0.09}
-                                      normal{bozo 1 scale .008}
-                                      }
-                           //gap para os botoes power
-                           box {<-.8, 10, -27>, <.8, 14, -29> pigment {color rgb <.9, .9, .8>}
-                               finish{
-                                      conserve_energy
-                                      diffuse 0.6
-                                      ambient 0
-                                      specular 0.2
-                                      roughness 0.09}
-                                      normal{bozo 1 scale .008}
-                                      }
-                           
-                           
-                           //entrada de disquete
-                           cylinder {<-.7, 17.5, -27>, <.7, 17.5, -27> .5 pigment {color rgb <1, 1, .7>}
-                               finish{
-                                      conserve_energy
-                                      diffuse 0.6
-                                      ambient 0
-                                      specular 0.2
-                                      roughness 0.09}
-                                      normal{bozo 1 scale .008}}
-                           box {<-2.4, 17.4, -20>, <2.4, 17.6, -28> pigment {color rgb <1, 1, .7>}
-                               finish{
-                                      conserve_energy
-                                      diffuse 0.6
-                                      ambient 0
-                                      specular 0.2
-                                      roughness 0.09}
-                                      normal{bozo 1 scale .008}}
-                           //buracos de ar
-                           object {buracos
-                                     scale <.5, .5, .5>
-                                     rotate y*90
-                                     translate <-3.505, 15 , -10>}               
-                         
-                           }// fim do difference dos particionamentos 
+            difference{ //Corpo do Gabinete
+                intersection {
+                    box {<-3.5, 0, 0>, <3.5, 25, -40> pigment {color rgb <.8, .8, .6>}
+                        finish{
+                            conserve_energy
+                            diffuse 0.6
+                            ambient 0
+                            specular 0.2
+                            roughness 0.09}
+                            normal{bozo 1 scale .008}}
+                    cylinder {<0, -2, -12>, <0, 30, -12> 16 pigment {color rgb <.8, .8, .6>}
+                        finish{
+                            conserve_energy
+                            diffuse 0.6
+                            ambient 0
+                            specular 0.2
+                            roughness 0.09}
+                            normal{bozo 1 scale .008}}}//fim do intersection
+               // particionamenndo do leitor de dvd
+                box {<-3, 23, -27>, <3, 20, -29> pigment {color rgb <.9, .9, .8>}
+                    finish{
+                        conserve_energy
+                        diffuse 0.6
+                        ambient 0
+                        specular 0.2
+                        roughness 0.09}
+                        normal{bozo 1 scale .008}} 
+               // particionamento do leitor de disquete
+                box {<-3, 16, -27>, <3, 19, -29> pigment {color rgb <.9, .9, .8>}
+                    finish{
+                        conserve_energy
+                        diffuse 0.6
+                        ambient 0
+                        specular 0.2
+                        roughness 0.09}
+                        normal{bozo 1 scale .008}}
+               //gap para os botoes power
+                box {<-.8, 10, -27>, <.8, 14, -29> pigment {color rgb <.9, .9, .8>}
+                    finish{
+                        conserve_energy
+                        diffuse 0.6
+                        ambient 0
+                        specular 0.2
+                        roughness 0.09}
+                        normal{bozo 1 scale .008}}
+              //entrada de disquete
+                cylinder {<-.7, 17.5, -27>, <.7, 17.5, -27> .5 pigment {color rgb <1, 1, .7>}
+                    finish{
+                        conserve_energy
+                        diffuse 0.6
+                        ambient 0
+                        specular 0.2
+                        roughness 0.09}
+                        normal{bozo 1 scale .008}}
+                box {<-2.4, 17.4, -20>, <2.4, 17.6, -28> pigment {color rgb <1, 1, .7>}
+                    finish{
+                        conserve_energy
+                        diffuse 0.6
+                        ambient 0
+                        specular 0.2
+                        roughness 0.09}
+                        normal{bozo 1 scale .008}}
+             //buracos de ar
+                object {buracos
+                    scale <.5, .5, .5>
+                    rotate y*90
+                    translate <-3.505, 15 , -10>}}// fim do difference dos particionamentos 
               // gaveta dvd
-              box{<-2.8, 22.5, -26.9>, <2.8, 21.2, -27.2>
-                  pigment {color rgb <.8, .8, .6>}
-                                   finish{
-                                          conserve_energy
-                                          diffuse 0.6
-                                          ambient 0
-                                          specular 0.2
-                                          roughness 0.09}
-                                          normal{bozo 1 scale .008}
-                                          }
-               object {dvd
-                        scale <.1, .05, 1> 
-                        translate <0, 21.5, -27.21>
-                        }
+                box{<-2.8, 22.5, -26.9>, <2.8, 21.2, -27.2> pigment {color rgb <.8, .8, .6>}
+                    finish{
+                        conserve_energy
+                        diffuse 0.6
+                        ambient 0
+                        specular 0.2
+                        roughness 0.09}
+                        normal{bozo 1 scale .008}}
+                object {dvd
+                    scale <.1, .05, 1> 
+                    translate <0, 21.5, -27.21>}
               // botão de abertura dvd
-              box {<2, 21, -26.9>, <2.8, 20.5, -27.1> pigment {color rgb <.4, .4, .3>}
-                               finish{
-                                      conserve_energy
-                                      diffuse 0.6
-                                      ambient 0
-                                      specular 0.2
-                                      roughness 0.09}
-                                      normal{bozo 1 scale .008}}
+                box {<2, 21, -26.9>, <2.8, 20.5, -27.1> pigment {color rgb <.4, .4, .3>}
+                    finish{
+                        conserve_energy
+                        diffuse 0.6
+                        ambient 0
+                        specular 0.2
+                        roughness 0.09}
+                        normal{bozo 1 scale .008}}
               //botão de retirada do disquete
-              cylinder {<2.2, 17, -26>, <2.2, 17, -27.1> .2 pigment {color rgb <.4, .4, .3>}
-                               finish{
-                                      conserve_energy
-                                      diffuse 0.6
-                                      ambient 0
-                                      specular 0.2
-                                      roughness 0.09}
-                                      normal{bozo 1 scale .008}} 
+                cylinder {<2.2, 17, -26>, <2.2, 17, -27.1> .2 pigment {color rgb <.4, .4, .3>}
+                    finish{
+                        conserve_energy
+                        diffuse 0.6
+                        ambient 0
+                        specular 0.2
+                        roughness 0.09}
+                        normal{bozo 1 scale .008}} 
             
               
               //botão de ligar gabinete
-              torus {.5, .1
-                     pigment {color rgb <0, 0, 1>}
-                     finish {Metal}
-                     rotate x*90
-                     translate <0, 11, -27.1>}
+                torus {.5, .1 pigment {color rgb <0, 0, 1>}
+                    finish {Metal}
+                    rotate x*90
+                    translate <0, 11, -27.1>}
              
-             cylinder {<0, 11, -26>, <0, 11, -27.1> .4 pigment {color rgb <.4, .4, .3>}
-                               finish{
-                                      conserve_energy
-                                      diffuse 0.6
-                                      ambient 0
-                                      specular 0.2
-                                      roughness 0.09}
-                                      normal{bozo 1 scale .008}}
+                cylinder {<0, 11, -26>, <0, 11, -27.1> .4 pigment {color rgb <.4, .4, .3>}
+                    finish{
+                        conserve_energy
+                        diffuse 0.6
+                        ambient 0
+                        specular 0.2
+                        roughness 0.09}
+                        normal{bozo 1 scale .008}}
               
-              object {onoff
-                        scale <.055, .055, .055>
-                        rotate x*-90
-                        translate <0, 11, -27.1>}//fim do botão ligar
+                object {onoff
+                    scale <.055, .055, .055>
+                    rotate x*-90
+                    translate <0, 11, -27.1>}//fim do botão ligar
               //lateral
-              difference {box {<-3.505, 0.3, -0.01>, <-3.501, 24.7, -26.5> pigment {color rgb <1, 1, .9>}
-                                                finish{
-                                                      conserve_energy
-                                                      diffuse 0.6
-                                                      ambient 0.1
-                                                      specular 0.7
-                                                      roughness 0.09}
-                                                      normal{bozo 1 scale .008}}
-                         object {buracos
-                                     scale <.5, .5, .5>
-                                     rotate y*90
-                                     translate <-3.505, 15 , -10>}}
+                difference {
+                    box {<-3.505, 0.3, -0.01>, <-3.501, 24.7, -26.5> pigment {color rgb <1, 1, .9>}
+                        finish{
+                            conserve_energy
+                            diffuse 0.6
+                            ambient 0.1
+                            specular 0.7
+                            roughness 0.09}
+                            normal{bozo 1 scale .008}}
+                    object {buracos
+                        scale <.5, .5, .5>
+                        rotate y*90
+                        translate <-3.505, 15 , -10>}}
               
               //translate de todo o gabinete    
-              translate <-8, 30, -17>
-              }//fim do union do gabinete
+                translate <-8, 30, -17>}//fim do union do gabinete
             ////////////////////////////////////////////////////////////FIM DO GABINETE/////////////////////////////////////////////////
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////               
             /*------------------------------------------------------------------------------------------------------------------------*/
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
             ///////////////////////////////////////////////////////////MOUSE////////////////////////////////////////////////////////////       
             union {
-                  union {
-                         difference {sphere {<0, 0, 0> 3  pigment {color rgb <1, 1, .9>}
-                                                                    finish{
-                                                                          conserve_energy
-                                                                          diffuse 0.4
-                                                                          ambient 0.1
-                                                                          specular 0.1
-                                                                          roughness 0.09}
+                union {
+                    difference {
+                        sphere {<0, 0, 0> 3  pigment {color rgb <1, 1, .9>}
+                            finish{
+                                conserve_energy
+                                diffuse 0.4
+                                ambient 0.1
+                                specular 0.1
+                                roughness 0.09}
                                                                           normal{bozo 1 scale .008}}
                                     box {<-10, 0, 10>, <10, -10, -30>}}
                          difference { sphere {<0, 0, 0> 3.01  pigment {color rgb <.8, .8, .7>}
