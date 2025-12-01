@@ -50,16 +50,16 @@ light_source {<0, 300, -20> color rgb <1, 1, 1>}
             .15, <73, 61, -160>
             .20, <73, 61, -145>
             .25, <73, 61, -135>
-            .30, <65, 61, -120>
-            .35, <60, 61, -120>
-            .40, <50, 61, -120>
-            .45, <40, 61, -110>            
-            .50, <30, 61, -100>
-            .55, <20, 61, -100>
-            .60, <10, 61, -90>
-            .65, <0, 61, -90>
-            .70, <-10, 61, -90>
-            .75, <-15, 58, -80>
+            .30, <70, 61, -120>
+            .35, <60, 61, -110>
+            .40, <50, 61, -100>
+            .45, <40, 61, -90>            
+            .50, <30, 61, -80>
+            .55, <20, 61, -80>
+            .60, <10, 61, -80>
+            .65, <0, 61, -80>
+            .70, <-10, 61, -80>
+            .75, <-15, 58, -70>
             .80, <-15, 58, -70>
             .85, <-20, 55, -70>
             .90, <-22, 55, -70>
@@ -72,9 +72,9 @@ light_source {<0, 300, -20> color rgb <1, 1, 1>}
             .00, <73, 50, 0>
             .05, <73, 50, 0>
             .10, <73, 50, 0>
-            .15, <63, 50, 0>
-            .20, <50, 50, 0>
-            .25, <40, 50, -10>
+            .15, <73, 50, 0>
+            .20, <60, 50, 0>
+            .25, <45, 50, -10>
             .30, <30, 50, -20>
             .35, <20, 50, -30>
             .40, <10, 50, -50>
@@ -96,15 +96,15 @@ light_source {<0, 300, -20> color rgb <1, 1, 1>}
         cubic_spline
             .00, <-22, 55, -70>
             .05, <-22, 55, -70>
-            .10, <-22, 55, -70>
-            .15, <-22, 55, -70>
-            .20, <-22.2, 55, -68>
-            .25, <-22.2, 55, -66>
-            .30, <-22.2, 55, -64>
-            .35, <-22.4, 55, -62>
-            .40, <-22.4, 55, -60>
-            .45, <-22.4, 55, -58>            
-            .50, <-22.6, 55, -56>
+            .10, <-21, 55, -70>
+            .15, <-19, 55, -70>
+            .20, <-16, 55, -68>
+            .25, <-14, 55, -66>
+            .30, <-17, 55, -64>
+            .35, <-19, 55, -62>
+            .40, <-20, 55, -60>
+            .45, <-21, 55, -58>            
+            .50, <-22, 55, -56>
             .55, <-22.6, 55, -54>
             .60, <-22.6, 55, -51>
             .65, <-22.8, 54, -48>
@@ -121,17 +121,17 @@ light_source {<0, 300, -20> color rgb <1, 1, 1>}
         cubic_spline
             .00, <-22, 30, 0>
             .05, <-22, 30, 0>
-            .10, <-22, 30, 0>
-            .15, <-22, 30, 0>
-            .20, <-22.2, 30, 0>
-            .25, <-22.2, 28, 0>
-            .30, <-22.2, 26, 0>
-            .35, <-22.4, 24, 0>
-            .40, <-22.4, 22, 0>
-            .45, <-22.4, 20, 0>            
-            .50, <-22.6, 10, 0>
-            .55, <-22.6, 20, 0>
-            .60, <-22.6, 25, 0>
+            .10, <-22, 28, 0>
+            .15, <-22, 26, 0>
+            .20, <-22.2, 24, 0>
+            .25, <-22.2, 22, 0>
+            .30, <-24.2, 20, 0>
+            .35, <-26.4, 15, 0>
+            .40, <-26.4, 10, 0>
+            .45, <-24.4, 15, 0>            
+            .50, <-22.6, 16, 0>
+            .55, <-22.6, 15, 0>
+            .60, <-22.6, 20, 0>
             .65, <-22.8, 30, 0>
             .70, <-22.8, 32, 0>
             .75, <-22.8, 34, 0>
@@ -141,17 +141,24 @@ light_source {<0, 300, -20> color rgb <1, 1, 1>}
             .95, <-23, 39, 0>
               1, <-23, 39, 0>}          
           
-//camera {location <-23, 39, -48> look_at <-23, 39, 0>}            
+
+//camera {location <-23, 39, -100> look_at <-23, 39, 0>}
+           
             
-//camera {location CAMSplineC1loc(clock) look_at <73, 50, 0>} //camera cena 1 (andando no corredor) gerar 240 frames 
-//camera {location <73, 61, -190> look_at CAMSplineC2look(clock)} //camera cena 2 (olhando para baixo) gerar com 25 frames
-//camera {location <73, 61, -190> look_at <73, 39, 0>} //camera cena 3 (maçaneta) gerar com 25 frames
-//camera {location <73, 61, -190> look_at CAMSplineC4look(clock)} //camera cena 24 (porta abre e olha pra cima) gerar com 55 frames 
-//camera {location CAMSplineC5loc(clock) look_at CAMSplineC5look(clock)} //camera cena 5 (anda da porta até o pc) gerar com 800 frames 
+//camera {location CAMSplineC1loc(clock) look_at <73, 50, 0>} //camera cenaAa (andando no corredor) gerar 300 frames 
+//camera {location <73, 61, -190> look_at <73, 50, 0>} //camera cenaAb
 
-//camera {location CAMSplineC6loc(clock) look_at CAMSplineC6look(clock)} //camera cena 6 (aproxima a camera do pc) gerar com 300 frames
+//camera {location <73, 61, -190> look_at CAMSplineC2look(clock)} //camera cenaB (olhando para baixo) gerar com 25 frames
 
-camera {location <-23, 39, -38> look_at <-23, 39, 0>} //camera cena 7 (muda pra tela de boot e carrega) gerar  com 200 frames
+//camera {location <73, 61, -190> look_at <73, 39, 0>} //camera cenaC (maçaneta) gerar com 25 frames
+
+//camera {location <73, 61, -190> look_at CAMSplineC4look(clock)} //camera cenaD (porta abre e olha pra cima) gerar com 55 frames 
+
+//camera {location CAMSplineC5loc(clock) look_at CAMSplineC5look(clock)} //camera cenaE (anda da porta até o pc) gerar com 800 frames 
+
+//camera {location CAMSplineC6loc(clock) look_at CAMSplineC6look(clock)} //camera cenaF (aproxima a camera do pc) gerar com 300 frames
+
+camera {location <-23, 39, -38> look_at <-23, 39, 0>} //camera cenaG (foca na tela) gerar  com 200 frames
 
 
 
@@ -344,7 +351,7 @@ union{
                 finish {phong .1 specular.1} 
                 rotate<0,0,0> scale .5 translate<0,0,0>}}
             box{<-25, 71, -3.2>, <-9, 60, -3.01> pigment {image_map
-                {jpeg "quadronegro.jpeg" 
+                {jpeg "quadronegro1.jpeg" 
                 map_type 0}
                 scale <16, 13, 1> 
                 translate <7, 5, 0>}
@@ -786,7 +793,7 @@ union {
                     //tela        
             box {<-8, 2, -16>, <8, 18, -23.4>}               
                     }//Fim do Difference
-       box {<-8, 2, -16>, <8, 18, -19.6> pigment {color rgbf <.01, .01, .01, .99999>} finish {phong .5 reflection .03}}
+       box {<-8, 2, -16>, <8, 18, -19.8> pigment {color rgbf <.01, .01, .01, .99999>} finish {phong .5 reflection .03}}
        //Botoes
       cylinder {<8, 1, -19.8>, <8, 1, -20.02> 0.6 pigment {color rgb <1, 1, .7>}}
         object { onoff 
@@ -827,9 +834,9 @@ union {
                             conserve_energy
                             diffuse 0.6
                             ambient 0
-                            specular 0.2
+                            specular 0.4
                             roughness 0.09}
-                            normal{bozo 1 scale .008}}
+                            normal{bozo .8 scale .008}}
                     cylinder {<0, -2, -12>, <0, 30, -12> 16 pigment {color rgb <.8, .8, .6>}
                         finish{
                             conserve_energy
@@ -1331,8 +1338,9 @@ union {
                         text { ttf "tahoma.ttf" "08:46 AM" 0.2, 0
                                                  pigment { color rgb <1, 1, 1> }
                                                  scale <.6,.6,.6>
-                                                 translate <16, -19, -.007>}
-                        ////////////////////////////cursores/////////////////////////////////////////////////////////////
+                                                 translate <16, -19, -.007>} 
+                        
+                         ////////////////////////////cursores/////////////////////////////////////////////////////////////
                         #declare cursor = union{
                             difference{
                                 union{
@@ -1346,7 +1354,9 @@ union {
                                 box {<-2, -2, -4>, <2, 2, -.006>} pigment {color White}}
                                 }
                          
-                        //object {cursor translate <-15, 15, 0> *clock}
+                        //object {cursor 
+                            //translate <-15, 15, 0> *clock
+                            //}
                         
                         
                         #declare cursorSel = union{
@@ -1374,12 +1384,11 @@ union {
                             translate <-14.4, 15, 0>}
                             
                             
-                          object {cursorSel translate <-2, 2, 0> //*clock
-                          }
+                          object {cursorSel translate <-2, 2, 0> 
+                          //*clock
+                          }                          
                         }//fim do declare da Area de Trabalho
-      /*object {screen
-                scale <.4, .4, .4>
-                translate <-35, 49, -31.8>}*/ ///Chama a tela de Area de trabalho
+      //object {screen scale <.4, .4, .4> translate <-35, 49, -31.9>} ///Chama a tela de Area de trabalho
        /////////////////////////////////////////Fim da Area de Trabalho////////////////////////////////////////////////////////////////////////////
        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
        /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -1483,16 +1492,14 @@ union {
                                 ##declare jump = union {
                                                         box{<-19.5, -17, 1>, <19.5, 18, -0.006> pigment
                                                             {image_map
-                                                            {jpeg "wonderfulview1.jpeg"
+                                                            {png "wonderfulview2.png"
                                                             map_type 0}
                                                             scale <40, 40, 40>
                                                             translate <-20, 18, 0>}
                                                             }}
                                 object {jump}///Chama o jump
                                 }
-      object {screenWindow
-                scale <.4, .4, .4>
-                translate <-35, 49, -31.8>} ///Chama a Janela aberta
+       //object {screenWindow scale <.4, .4, .4> translate <-35, 49, -31.8>} ///Chama a Janela aberta
        /////////////////////////////////////////Fim da Janela Aberta////////////////////////////////////////////////////////////////////////////
        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
        /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -1543,22 +1550,39 @@ union {
                                                            difference {sphere {<-8, -6, -0.01> .6 pigment {color rgb <0, .2, 1>}}
                                                                 box {<-15, -3, 0>, <15, -9, -2> pigment {color rgb <0, .2, 1>}}}
                                                                 }     
-                                 
-                                       
-                                 #declare MySpline =
-                                    spline {
-                                       linear_spline
-                                       
-                                        0, <-4, 0, -0.001>,
-                                       .5, <8, 0, -0.001>
-                                        1, <22, 0, -0.001>,} 
+                                
                                  
                         
                                  object{carrega 
-                                          translate MySpline(clock)}}   
+                                          translate <-3.3, 0, 0> + <25.2, 0, 0> *clock }}   
        //object {boot scale <.4, .4, .4> translate <-35, 49, -31.8>} ///chama a tela de boot
-       }//Fim do union do PC 
        /////////////////////////////////////////Fim da tela de boot////////////////////////////////////////////////////////////////////////////
+       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       /*----------------------------------------------------------------------------------------------------------------------------------------*/
+       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       ///////////////////////////////////////////////////Tela de Welcome////////////////////////////////////////////////////////////////////////////  
+       #declare welcome = union {                                                   
+            box{<-20, -20, -.001>, <20, 20, 0> pigment {color rgb <.1, .5, 1>}}
+            box{<-20, -20, -.01>, <20, -10, 0> pigment {color rgb <.08, .3, .8>}}
+            box{<-20, 10, -.01>, <20, 20, 0> pigment {color rgb <.08, .3, .8>}}
+            box{<-20, 10.5, -.1>, <20, 10, 0> pigment {color rgb <1, 1, 1>}}
+            box{<-20, -10.5, -.1>, <20, -10, 0> pigment {color rgb <1, 1, 1>}}
+            text { ttf "tahoma.ttf" "Welcome" 0.2, 0
+                   pigment { color rgb <1, 1, 1> }
+                   scale <3,3,3>
+                   translate <1, .5, -.11>}}
+                   
+         //object {welcome scale <.4, .4, .4> translate <-35, 49, -31.8>}
+       }//Fim do union do PC 
+       /////////////////////////////////////////Fim da tela de Welcome////////////////////////////////////////////////////////////////////////////
+       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       /*----------------------------------------------------------------------------------------------------------------------------------------*/
+       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       ///////////////////////////////////////////////////Tela azul////////////////////////////////////////////////////////////////////////////
+       #declare telaazul = box{<-20, -20, .1>, <20, 20, 0> pigment{image_map{png "telaazul.png" map_type 0} scale<40, 40, 0> translate<-20, 20, 0>}}
+       
+       object {telaazul scale <.4, .4, .4> translate <-35, 49, -31.8>}
+        /////////////////////////////////////////Fim da tela azul////////////////////////////////////////////////////////////////////////////
        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
        /*----------------------------------------------------------------------------------------------------------------------------------------*/
        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1626,9 +1650,10 @@ union {
          object {caixaL
                 translate <-48, 38.5, -24>} 
 
-scale <.8, .8, .8>
-translate <5,0,2>} //Fim do union estante / pc 
-
+        scale <.8, .8, .8>
+        translate <5,0,2>} //Fim do union estante / pc 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////Cadeira///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  union{
  #declare pe = union {object{Round_Cone( <0,4,0>, 1.70    , <0,3,-12>, 1 , 0.35, 0) pigment {color rgb <.04, .04, .04>}} 
                       cylinder {<-.8, 1, -10.7>, <-.1, 1, -10.7> 1}
@@ -1677,7 +1702,44 @@ translate <5,0,2>} //Fim do union estante / pc
  object{Round_Box(<2,23, -10>,<-2,24,-7.8>, .25   , 0)pigment {color rgb <.04, .04, .04>} }
  object{Round_Box(<2,23, 10>,<-2,24, 7.8>, .25   , 0)pigment {color rgb <.04, .04, .04>} }
  scale <1, 1, 1>
- rotate y*-50
- rotate y*-40*clock
- translate <-30, 0, -45> + <7, 0, 3> * clock
+ rotate y*-20
+ //rotate y*-70*clock
+ rotate y*-70
+ translate <-38, 0, -52> + <15, 0, 10> //* clock
  }      
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+ //////////////////////////////////////////////////////////////////////////////POSTERS///////////////////////////////////////////////////////////////////////////////////////////////////////
+ box{<-10, -15, 0>, <10, 15, -1>  pigment {image_map
+                {jpeg "starwars.jpg" 
+                map_type 0}
+                scale <20, 30, 1> 
+                translate <10, 15, 0>}
+                normal { bozo 10.5 scale 0.001 }
+                finish {phong .01 reflection .1}
+                rotate z*4
+                rotate y*-90
+                translate <-60.9, 55, -40>}
+                
+  box{<-10, -15, 0>, <10, 15, -1>  pigment {image_map
+                {jpeg "Terminator1984.jpg" 
+                map_type 0}
+                scale <20, 30, 1> 
+                translate <10, 15, 0>}
+                normal { bozo 10.5 scale 0.001 }
+                finish {phong .01 reflection .1}
+                rotate z*-2
+                rotate y*-90
+                translate <-60.9, 40, -65>}
+  
+  box{<-10, -10, 0>, <10, 10, -1>  pigment {image_map
+                {jpeg "pink.jpg" 
+                map_type 0}
+                scale <20, 30, 1> 
+                translate <10, 15, 0>}
+                normal { bozo 10.5 scale 0.001 }
+                finish {phong .01 reflection .1}
+                rotate z*-5
+                rotate y*-90
+                translate <-60.9, 68, -65>}
+////////////////////////////////////////////////////////////////////////////////////FIM DO POSTER///////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
